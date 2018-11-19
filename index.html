@@ -1,0 +1,32 @@
+<meta charset="utf-8"/>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <script src="jquery.js"></script>
+ <script src="angular.js"></script>
+ <script src="angular.min.js"></script>
+  <script src="script.js"></script>
+  <title>Movie Search</title>
+</head>
+
+<body ng-app="OMDbAPISearch">
+  <div class="container" ng-controller="searchMovies">
+  <div class="search">
+       <input id="theSearch" ng-model="searchparam" placeholder="movie name" type="text" ngTrim="true" />
+       <button ng-click="fetch()">Search</button>
+       <div class="clear"></div>
+      </div>
+    </form>
+
+    <div class="results">
+
+      <div class="result" movie-srch-results ng-repeat="movie in movieResults"></div>
+
+    </div>
+    <div class="noResults"></div>
+
+  </div>
+</body>
+
+</html>
